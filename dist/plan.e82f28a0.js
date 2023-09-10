@@ -574,10 +574,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"dV6cC":[function(require,module,exports) {
-// const iconArrow = document.querySelectorAll(".questions__arrow");
-// const asideItem = document.querySelectorAll(".aside__item");
-// const arrItens = new Array(5);
-// let stateManager;
+// Esse codigo será aplicado na pagina plan.html. A ideia é personalizar o plano de acordo com as escolhas do cliente. Na primeira opção (How do you frink your coffee), se o cliente escolher a opçãp Capsule, a quarta opção (Grind Option) fica desabilitada. Na terceira opção (Quantity), dependendo da quantidade que o cliente escolha, a ultima opção (deliveries) vai refletir a mudança no preço do frete. Por fim, há um Order Summary no final, contendo um resumo com o pedido do cliente. Essa Order Summary foi feita com o uso de array. Ao clicar no botao Create your plan, será exibido um novo Order Summary, agora com o preço do frete atualizado dependendo das escolhas do cliente
 class HandleCard {
     constructor(){
         this.iconArrow = document.querySelectorAll(".questions__arrow");
@@ -603,7 +600,6 @@ class HandleCard {
         if (this.arrItens.includes("Capsule")) this.arrItens.splice(3, 1);
         if (this.arrItens.includes(undefined)) return;
         console.log(this.arrItens);
-        // const howOften = this.arrItens[4];
         const howOften = this.arrItens[this.arrItens.length - 1];
         switch(howOften){
             case "Every week":
@@ -683,9 +679,6 @@ class HandleCard {
         }
     }
     handleOrderSummary(items) {
-        // for (let count = 0; count < 5; count++) {
-        //   this.orderSummarySpans[count].textContent = items[count] ?? "____";
-        // }
         this.arrayItem3 = this.arrItens[3] ?? "____";
         this.arrayItem0 = this.arrItens[0] ?? "____";
         console.log(this.arrayItem0);
@@ -713,7 +706,6 @@ class HandleCard {
         console.log(this.isClickOnCard.parentElement.dataset.order);
         // ! Melhorar codigo abaixo
         if (+this.isClickOnCard.parentElement.dataset.order === 0) {
-            console.log("yrs");
             if (this.isClickOnCard.dataset.type === "Capsule") {
                 console.log(this.isClickOnCard);
                 this.grindEl.classList.add("questions__cards--inativo");
@@ -725,16 +717,6 @@ class HandleCard {
                 this.asideGrind.classList.remove("aside__item--opacity");
             }
         }
-        // if (this.isClickOnCard.dataset.type === "Capsule") {
-        //   console.log(this.isClickOnCard);
-        //   this.grindEl.classList.add("questions__cards--inativo");
-        //   this.arowDown(this.arrowGrind);
-        //   this.asideGrind.classList.add("aside__item--opacity");
-        //   // console.log(this.isClickOnCard);/
-        // } else {
-        //   this.grindEl.classList.remove("questions__cards--inativo");
-        //   this.asideGrind.classList.remove("aside__item--opacity");
-        // }
         if (this.grindEl.classList.contains("questions__cards--inativo")) this.arowDown(this.arrowGrind);
         this.stateManager = +this.isClickOnCard.parentElement.parentElement.dataset.order; // DOM traversing. Vai até a classe questions__element para pegar a ordem e fixa esse valor para gerenciar estado
         this.arrItens.splice(this.stateManager, 1, this.isClickOnCard.dataset.type); // vai inserir o item correspondente na array
@@ -752,75 +734,7 @@ class HandleCard {
 }
 const handler = new HandleCard();
 console.log(handler);
-handler.init(); // iconArrow.forEach((icon) => {
- //   icon.addEventListener("click", function (e) {
- //     const card = e.currentTarget.parentElement.nextElementSibling;
- //     console.log(card);
- //     const cardOrder = +card.dataset.order;
- //     const cardChildren = Array.from(card.children);
- //     card.classList.toggle("questions__cards--ativo");
- //     if (card.classList.contains("questions__cards--ativo")) {
- //       icon.src = require("../assets/plan/desktop/icon-arrow-up.svg");
- //       asideItem[cardOrder].classList.add("aside__item--ativo");
- //     } else {
- //       icon.src = require("../assets/plan/desktop/icon-arrow-down.svg");
- //       asideItem[cardOrder].classList.remove("aside__item--ativo");
- //       cardChildren.forEach((cardChild) =>
- //         cardChild.classList.remove("questions__card--selected")
- //       );
- //     }
- //   });
- // });
- // // Event Delegation
- // const sectionQuestions = document.querySelector(".section-questions");
- // sectionQuestions.addEventListener("click", (e) => {
- //   let questionsCard = e.target.closest(".questions__card"); // selecionado cliques que aconteceram em questions__card
- //   if (!questionsCard) return; // excluindo os que aconteceram fora
- //   stateManager = +questionsCard.parentElement.parentElement.dataset.order; // DOM traversing. Vai até a classe questions__element para pegar a ordem e fixa esse valor para gerenciar estado
- //   const cardGrind = document.querySelector(
- //     "div.questions__cards[data-order='3']"
- //   );
- //   const cardGrindText = cardGrind.previousElementSibling;
- //   console.log(cardGrindText);
- //   if (questionsCard.dataset.type === "Capsule") {
- //     console.log(cardGrind);
- //     cardGrind.classList.add("questions__cards--inativo");
- //     cardGrindText.style.opacity = "0.5";
- //   } else {
- //     cardGrind.classList.remove("questions__cards--inativo");
- //     cardGrindText.style.opacity = "1";
- //   }
- //   arrItens.splice(stateManager, 1, questionsCard.dataset.type); // vai inserir o item correspondente na array
- //   const questionsCardArray = Array.from(questionsCard.parentElement.children); // vai gerar uma array com todos os questions__card correspondente ao item que foi clidado
- //   questionsCardArray.forEach((card) =>
- //     card.classList.remove("questions__card--selected")
- //   );
- //   questionsCard.classList.toggle("questions__card--selected");
- //   console.log(arrItens);
- // });
- // ! Codigo antigo
- // const cards = document.querySelectorAll(".questions__card");
- // cards.forEach((item) => {
- //   item.addEventListener("click", function (e) {
- //     stateManager = +e.currentTarget.parentElement.parentElement.dataset.order;
- //     console.log(stateManager);
- //     if (+e.currentTarget.parentElement.parentElement.dataset.order === 0) {
- //       // arrItens.splice(0, arrItens.length, e.currentTarget.dataset.type);
- //       arrItens.splice(0, 1, e.currentTarget.dataset.type);
- //       console.log(item);
- //       const selectedItem = item;
- //       selectedItem.classList.toggle("questions__card--selected");
- //       console.log(arrItens);
- //     }
- //     // +e.currentTarget.parentElement.parentElement.dataset.order ===
- //     // stateManager
- //     else {
- //       arrItens.splice(stateManager, 1, e.currentTarget.dataset.type);
- //       console.log(arrItens);
- //       console.log(stateManager);
- //     }
- //   });
- // });
+handler.init();
 
 },{"ffbb45d79f4feb60":"g81wx","9bd1228c3852d5a4":"dATqc"}],"g81wx":[function(require,module,exports) {
 module.exports = require("d184fa7280d19eb").getBundleURL("2MSMO") + "icon-arrow-up.5da614a0.svg" + "?" + Date.now();

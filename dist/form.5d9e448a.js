@@ -574,6 +574,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"l9hyy":[function(require,module,exports) {
+// Esse codigo sera aplicado à pagina form.html. A principal funcionalidade dele é fazer uma requisição assincrona a uma base de dados que trabalha com CEP. Quando o cliente digitar o CEP e apertar enter, os campos de rua, bairro, cidade, estado e ddd será automaticamente preenchidos.
 class HandleForm {
     constructor(){
         this.cepInput = document.getElementById("cep");

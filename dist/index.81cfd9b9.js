@@ -574,6 +574,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"1WOei":[function(require,module,exports) {
+// Esse script serve para a versão mobile. Ao clicar no botao hambuerguer, o menu que ficava escondido passa a ficar visivel.
 const hamburguerDiv = document.querySelector(".header__hamburguer");
 const hamburguerImage = document.querySelector(".header__hamburguer img");
 const navEl = document.querySelector(".header__nav");
