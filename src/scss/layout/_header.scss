@@ -1,0 +1,92 @@
+.header {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  @include respond(mobile) {
+    margin-bottom: 4rem;
+  }
+
+  &__logo {
+    @include respond(mobile) {
+      max-width: 16.5rem;
+    }
+  }
+
+  &__nav {
+    margin-top: 0.6rem;
+
+    @include respond(mobile) {
+      display: none;
+      position: absolute;
+      top: 1300%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+    }
+
+    &--modal {
+      display: block;
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+      font-weight: 900;
+      font-family: Fraunces;
+      color: #000;
+      text-align: center;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 3.3rem;
+
+    & a:link {
+      transition: color 0.2s;
+    }
+
+    & a:hover {
+      color: $color-secondary;
+    }
+
+    @include respond(mobile) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__hamburguer {
+    display: none;
+
+    @include respond(mobile) {
+      display: block;
+    }
+
+    & .header__close {
+      @include respond(mobile) {
+        display: none;
+      }
+    }
+
+    &--inativo .header__open {
+      @include respond(mobile) {
+        display: none;
+      }
+    }
+
+    &--inativo .header__close {
+      @include respond(mobile) {
+        display: block;
+      }
+    }
+  }
+}
+
+// @media screen and (max-width: 767px) {
+//   main,
+//   .footer {
+//     display: none;
+//   }
+// }

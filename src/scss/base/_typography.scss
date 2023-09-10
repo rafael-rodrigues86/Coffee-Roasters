@@ -1,0 +1,40 @@
+.hero__description {
+  max-width: 45ch;
+
+  @include respond(mobile) {
+    max-width: 32ch;
+  }
+}
+
+.collection__description {
+  max-width: 28ch;
+}
+
+.why__description {
+  max-width: 57ch;
+}
+
+.why__paragrapah {
+  max-width: 30ch;
+}
+
+.how__step {
+  max-width: 10ch;
+}
+
+.how__paragraph {
+  max-width: 31ch;
+}
+
+.questions__summary h4 {
+  color: rgba($color-white, 0.5);
+}
+
+.questions__summary p {
+  max-width: 34ch;
+}
+
+.aside__item span,
+.aside__item p {
+  color: rgba(131, 136, 143, 1);
+}

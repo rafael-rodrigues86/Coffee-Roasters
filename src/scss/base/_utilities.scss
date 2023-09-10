@@ -1,0 +1,114 @@
+// FONTS
+
+.font-nav {
+  @include nav($color-gray);
+}
+
+.font-big {
+  @include h1($color-light-cream);
+}
+
+.font-big-color-tertiary {
+  @include h1($color-tertiary);
+}
+
+.font-medium {
+  @include h2($color-light-cream);
+}
+
+.font-medium-secondary {
+  @include h2($color-gray);
+}
+
+.font-medium-gray {
+  @include h2($color-secondary);
+}
+
+.font-medium-white {
+  @include h2($color-white);
+}
+
+.font-small {
+  @include h3($color-secondary);
+}
+
+.font-small-light {
+  @include h3($color-light-cream);
+}
+
+.font-small-extra {
+  @include h4($color-secondary);
+}
+
+.font-small-extra-gray {
+  @include h4($color-gray);
+}
+
+.font-small-extra-light {
+  @include h4($color-light-cream);
+}
+
+.font-small-extra-primary {
+  @include h4($color-primary);
+}
+
+.font-small-extra-secondary {
+  @include h4($color-secondary);
+}
+
+.font-small-extra-white {
+  @include h4($color-white);
+}
+
+.font-body-light {
+  @include body($color-light-cream);
+}
+
+.font-body-color-seconday {
+  @include body($color-secondary);
+}
+
+.font-body-white {
+  @include body($color-white);
+}
+
+.font-title {
+  @include font-title($color-gray);
+}
+
+// MARGIN
+
+.align-center {
+  @include max-width(125);
+
+  @include respond(mobile) {
+    @include max-width(34);
+  }
+
+  @include respond(largeScreen) {
+    @include max-width(150);
+  }
+}
+
+.align-text-center {
+  text-align: center;
+}
+
+// BREAK LINE
+.break-line {
+  display: block;
+}
+
+// BORDER-RADIUS
+.border-radius {
+  border-radius: 10px;
+}
+
+// Posicionamento
+.col-2 {
+  grid-column: span 2;
+}
+
+.display-none {
+  display: none !important;
+}

@@ -1,0 +1,78 @@
+.step {
+  &__items {
+    display: flex;
+    gap: 9.5rem;
+    margin-bottom: 6.4rem;
+
+    @include respond(mobile) {
+      flex-direction: column;
+      text-align: center;
+      gap: 6rem;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &:not(:last-child):before {
+      content: "";
+      position: absolute;
+      border-top: 1px solid $color-tertiary;
+      width: calc(100% + 9.5rem);
+      top: -8rem;
+
+      @include respond(mobile) {
+        display: none;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -9.5rem;
+      width: 3.1rem;
+      height: 3.1rem;
+      background-color: $color-light-cream;
+      border: 1px solid $color-primary;
+      border-radius: 500px;
+
+      @include respond(mobile) {
+        display: none;
+      }
+    }
+
+    &--plan {
+      &:not(:last-child):before {
+        left: 1.5rem;
+      }
+
+      &::after {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &__number {
+    display: inline-block;
+    margin-bottom: 3.8rem;
+  }
+
+  &__title {
+    margin-bottom: 4.2rem;
+    max-width: 10ch;
+
+    @include respond(mobile) {
+      font-size: 2.8rem;
+      line-height: 3.2rem;
+      max-width: 25ch;
+    }
+  }
+
+  &__paragraph {
+    @include respond(mobile) {
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      max-width: 38ch;
+    }
+  }
+}

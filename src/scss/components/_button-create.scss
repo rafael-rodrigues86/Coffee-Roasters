@@ -1,0 +1,18 @@
+.button-create {
+  @include button;
+  background-color: $color-primary;
+  padding: 1.6rem 3.2rem;
+  transition: background 0.2s;
+
+  @include respond(mobile) {
+    align-self: center;
+  }
+
+  &:hover {
+    background: #66d2cf;
+  }
+}
+
+.section-hero--modal .button-create {
+  display: none;
+}

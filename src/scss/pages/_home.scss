@@ -1,0 +1,251 @@
+// SECTION-HERO
+
+.section-hero {
+  margin-bottom: 14rem;
+  background-image: url("/src/assets/home/desktop/image-hero-coffeepress.jpg");
+  background-repeat: no-repeat;
+  background-position-x: 90%;
+  height: 60rem;
+  padding-top: 12rem;
+  padding-left: 9rem;
+
+  @include respond(mobile) {
+    background-image: url("/src/assets/home/mobile/image-hero-coffeepress.jpg");
+    // opacity: 0.5;
+    // background-image: linear-gradient(to bottom, white 50%, transparent),
+    //   url("/src/assets/home/mobile/image-hero-coffeepress.jpg");
+    background-size: contain;
+    padding-top: 10rem;
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+    height: 52rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10rem;
+  }
+
+  @include respond(largeScreen) {
+    background-size: cover;
+  }
+
+  &--modal {
+    @include respond(mobile) {
+      opacity: 0.6;
+      background: white;
+      // background-image: linear-gradient(to bottom, white 48%, transparent),
+      //   url("/src/assets/home/mobile/image-hero-coffeepress.jpg");
+    }
+  }
+}
+
+.hero {
+  &__title {
+    margin-bottom: 3.2rem;
+
+    @include respond(mobile) {
+      font-size: 4rem;
+      line-height: 4rem;
+      text-align: center;
+    }
+  }
+
+  &__description {
+    margin-bottom: 5.6rem;
+
+    @include respond(mobile) {
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      text-align: center;
+    }
+  }
+}
+
+// SECTION-COLLECTION
+.section-collection {
+  margin-bottom: 19rem;
+
+  @include respond(mobile) {
+    margin-bottom: 10rem;
+  }
+}
+
+.collection {
+  &__title {
+    margin-bottom: -4rem;
+    padding-top: 2.3rem;
+    padding-bottom: 3rem;
+
+    @include respond(mobile) {
+      font-size: 4.5rem;
+      line-height: 4.8rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+
+  &__coffee {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:not(:last-child) {
+      @include respond(mobile) {
+        margin-bottom: 10rem;
+      }
+    }
+  }
+
+  &__image {
+    max-width: 26rem;
+    margin-bottom: 7.3rem;
+
+    @include respond(mobile) {
+      margin-bottom: 2.3rem;
+    }
+  }
+
+  &__name {
+    margin-bottom: 2.5rem;
+
+    @include respond(mobile) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__description {
+    @include respond(mobile) {
+      font-size: 1.5rem;
+      max-width: 35ch;
+    }
+  }
+}
+
+// SECTIONN-WHY
+.section-why {
+  // background-color: $color-secondary;
+  // padding-top: 11.2rem;
+  margin-bottom: 0rem;
+
+  @include respond(mobile) {
+    margin-bottom: 12rem;
+  }
+}
+
+.why {
+  &__choose {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.3rem;
+    margin-bottom: -7rem;
+    background-color: $color-secondary;
+    padding-top: 6.4rem;
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+    padding-bottom: 30rem;
+
+    @include respond(mobile) {
+      margin-bottom: -0.5rem;
+      border-radius: 10px 10px 0 0;
+      padding-bottom: 1rem;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-left: 8.5rem;
+    margin-right: 8.5rem;
+    transform: translateY(-31rem);
+    // height: 67rem;
+
+    @include respond(mobile) {
+      flex-direction: column;
+      margin-left: 0;
+      margin-right: 0;
+      // margin-left: 2.5rem;
+      // margin-right: 2.5rem;
+      gap: 2.5rem;
+      // background-image: url("/src/assets/plan/mobile/bg-steps.png");
+      // background-repeat: no-repeat;
+      background-color: $color-secondary;
+      padding-bottom: 5rem;
+      padding-top: 3.6rem;
+      border-radius: 0 0 10px 10px;
+      transform: translateY(0);
+    }
+  }
+
+  &__card {
+    background-color: $color-primary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 7.2rem 4.8rem 4.8rem 4.8rem;
+    transform: translateY(40%);
+
+    @include respond(mobile) {
+      font-size: 2.8rem;
+      line-height: 2.8rem;
+      margin-right: 2.4rem;
+      margin-left: 2.4rem;
+      transform: translateY(0);
+    }
+  }
+
+  &__image {
+    max-width: 7.2rem;
+    margin-bottom: 5.6rem;
+  }
+
+  &__title {
+    margin-bottom: 2.4rem;
+
+    @include respond(mobile) {
+      font-size: 2.8rem;
+      line-height: 2.8rem;
+      text-align: center;
+    }
+  }
+
+  &__description {
+    @include respond(mobile) {
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      max-width: 34ch;
+    }
+  }
+}
+
+// SECTION HOW
+.section-how {
+  margin-left: 7rem;
+  margin-bottom: 10rem;
+
+  @include respond(mobile) {
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.how {
+  &__title {
+    margin-bottom: 18rem;
+
+    @include respond(mobile) {
+      margin-bottom: 8rem;
+      text-align: center;
+    }
+  }
+}

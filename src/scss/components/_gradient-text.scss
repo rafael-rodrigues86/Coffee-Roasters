@@ -1,0 +1,3 @@
+.gradient-text {
+  @include text-gradient(180deg, $color-gray, $color-light-cream);
+}
